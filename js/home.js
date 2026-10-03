@@ -1,3 +1,9 @@
+import { auth } from "./firebase-config.js";
+
+import {
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 import { db } from "./firebase-config.js";
 
 import {
@@ -498,3 +504,39 @@ async function load() {
 
 
 load();
+
+/* =========================================================
+   HIDE CREATE ACCOUNT WHEN USER IS LOGGED IN
+   ========================================================= */
+
+onAuthStateChanged(
+  auth,
+  (user) => {
+
+    const createAccountBtn =
+      document.getElementById(
+        "createAccountBtn"
+      );
+
+
+    if (!createAccountBtn) {
+      return;
+    }
+
+
+    if (user) {
+
+      // User is logged in.
+      createAccountBtn.style.display =
+        "none";
+
+    } else {
+
+      // User is logged out.
+      createAccountBtn.style.display =
+        "";
+
+    }
+
+  }
+);
