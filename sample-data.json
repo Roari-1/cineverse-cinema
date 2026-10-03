@@ -1,0 +1,42 @@
+{
+  "movies": [
+    {
+      "title": "Neon Horizon",
+      "posterUrl": "assets/posters/neon-horizon.svg",
+      "backdropUrl": "assets/banners/neon-horizon.svg",
+      "trailerUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "runtime": 128,
+      "ageRating": "PG-13",
+      "releaseDate": "2026-08-14",
+      "director": "Mara Velasco",
+      "cast": "Lena Cruz, Theo Santos, Amir Reyes",
+      "synopsis": "A signal engineer discovers a pattern hidden inside a citywide communications blackout and races to decode it before sunrise.",
+      "ticketPrice": 350,
+      "status": "now-showing",
+      "featured": true
+    },
+    {
+      "title": "Echoes of Orion",
+      "posterUrl": "assets/posters/echoes-of-orion.svg",
+      "backdropUrl": "assets/banners/echoes-of-orion.svg",
+      "trailerUrl": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+      "genres": [
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "runtime": 142,
+      "ageRating": "PG",
+      "releaseDate": "2026-09-02",
+      "director": "Celina Ramos",
+      "cast": "Iris Tan, Gabriel Lim",
+      "synopsis": "A student-built observatory receives a repeating deep-space transmission that points to a mystery much closer to Earth.",
+      "ticketPrice": 380,
+      "status": "now-showing",
+      "featured": true
+    }
+  ]
+}

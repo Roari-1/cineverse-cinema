@@ -1,0 +1,9 @@
+export const money = n => new Intl.NumberFormat('en-PH',{style:'currency',currency:'PHP'}).format(Number(n||0));
+export const qs=(s,p=document)=>p.querySelector(s); export const qsa=(s,p=document)=>[...p.querySelectorAll(s)];
+export function toast(message,type='success'){let wrap=qs('.toast-wrap');if(!wrap){wrap=document.createElement('div');wrap.className='toast-wrap';document.body.append(wrap)}const el=document.createElement('div');el.className='toast '+(type==='error'?'error':'');el.textContent=message;wrap.append(el);setTimeout(()=>el.remove(),3300)}
+export function friendlyError(err){const c=err?.code||'';if(c.includes('email-already-in-use'))return 'An account already exists for this email.';if(c.includes('invalid-credential')||c.includes('wrong-password')||c.includes('user-not-found'))return 'Login failed. Please check your email and password.';if(c.includes('permission-denied'))return 'You do not have permission to perform this action.';if(c.includes('network-request-failed'))return 'Network error. Check your internet connection and try again.';return err?.message?.replace(/^FirebaseError:\s*/,'')||'Something went wrong. Please try again.'}
+export function setButtonLoading(btn,loading,label='Please wait...'){if(!btn)return;if(loading){btn.dataset.label=btn.textContent;btn.disabled=true;btn.textContent=label}else{btn.disabled=false;btn.textContent=btn.dataset.label||btn.textContent}}
+export function formatDate(value){if(!value)return '—';const d=value?.toDate?value.toDate():new Date(value);return Number.isNaN(d.getTime())?'—':d.toLocaleDateString('en-PH',{year:'numeric',month:'short',day:'numeric'})}
+export function bookingRef(){return 'CV-'+Math.random().toString(36).slice(2,8).toUpperCase()}
+export function initNav(){const b=qs('#menuBtn'),n=qs('#navLinks');b?.addEventListener('click',()=>n?.classList.toggle('open'))}
+export function pageParam(name){return new URLSearchParams(location.search).get(name)}
